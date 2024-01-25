@@ -2,8 +2,9 @@ import { useState } from "react"
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase-config";
 
-function NewTodo({ setRun }) {
+function NewTodo({ setRun, user }) {
 	const [todo, setTodo] = useState("")
+	console.log(user)
 
 	const addTodo = async () => {
 		console.log(todo)
@@ -13,6 +14,7 @@ function NewTodo({ setRun }) {
 
 			const docRef = await addDoc(todosCollection, {
 				todo: todo,
+				user: user.uid
 			});
 			console.log("Document written with ID: ", docRef.id);
 			setRun(currentState => !currentState)

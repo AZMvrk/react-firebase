@@ -1,27 +1,37 @@
-import { collection, deleteDoc, doc, getDocs } from "firebase/firestore"
+import { collection, deleteDoc, doc, getDocs, query, where } from "firebase/firestore"
 import { useEffect, useState } from "react"
 import { db } from "../firebase-config"
 
-function Todos({ run, setRun }) {
+function Todos({ run, setRun, user }) {
 	const [todos, setTodos] = useState(null)
 
 	useEffect(() => {
-		const todosCollection = collection(db, "todos")
-		console.log("fetching todos")
+			const todosCollection = collection(db, "todos")
+			console.log("fetching todos")
 
-		getDocs(todosCollection)
+			/* getDocs(todosCollection)
 			.then(querySnapshot => {
 				const todosData = querySnapshot.docs.map(doc => ({
 					...doc.data(),
 					id: doc.id
 				}))
 				setTodos(todosData)
-			})
-	}, [run])
+			}) */
 
-	const handleDelete = (id) =>{
+			const q = query(todosCollection, where("user", "==", user.uid))
+			getDocs(q)
+				.then(querySnapshot => {
+					const todosData = querySnapshot.docs.map(doc => ({
+						...doc.data(),
+						id: doc.id
+					}))
+					setTodos(todosData)
+				})
+	}, [run, user])
+
+	const handleDelete = (id) => {
 		const docRef = doc(db, "todos", id)
-		
+
 		deleteDoc(docRef)
 			.then(() => {
 				console.log(id, " has been deleted")
@@ -34,7 +44,7 @@ function Todos({ run, setRun }) {
 		<div className="todos">
 			{todos
 				?
-				todos.map((todoData, index) => 
+				todos.map((todoData, index) =>
 					<p key={index}>
 						{todoData.todo}
 						<button onClick={() => handleDelete(todoData.id)}>X</button>
