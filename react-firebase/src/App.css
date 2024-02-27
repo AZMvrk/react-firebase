@@ -1,0 +1,98 @@
+body {
+	padding: 20px;
+  
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	gap: 40px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+}
+
+form > button{
+  width: 10vw;
+}
+#root > button{
+  width: 10vw;
+}
+
+input {
+  border-radius: 20px;
+  padding: 10px;
+  width: 20vw;
+}
+
+button {
+  border-radius: 20px;
+  padding: 10px;
+  background-color: rgba(0, 122, 204, 0.40);
+}
+
+input:hover{
+  cursor: pointer;
+  background-color: rgba(0, 122, 204, 0.20);
+  
+}
+button:hover{
+  cursor: pointer;
+  background-color: rgba(0, 122, 204, 0.20);
+}
+
+.home{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.new-todo{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.new-todo > button {
+  width: 10vw;
+}
+
+#root > div > div.todos{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#root > div > div.todos > p{
+  justify-content: right;
+  font-size: large;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#root > div > div.todos > p > button:hover{
+  background-color: rgba(255, 0, 0, 0.50);
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+#root > div > div.todos > p > button{
+  color: rgba(255, 0, 0, 0.50);
+  border: 1px solid rgba(255, 0, 0, 0.60);
+  background-color: white;
+  border-radius: 10px;
+}
+#root > div > button{
+  width: 10vw;
+}
+
+h2{
+ text-align: center;
+}
+/* @media only screen and (max-width: 450px) {
+} */
