@@ -27,12 +27,12 @@ function NewTodo({ setRun, user }) {
 		<div className="new-todo">
 			<input
 				type="text"
-				placeholder="new thing to do..."
+				placeholder="new thing..."
 				value={todo}
 				onChange={event => setTodo(event.target.value)}
 			/>
 
-			<button onClick={addTodo}>Add to list</button>
+			<button className="add-button" onClick={addTodo}>Add</button>
 		</div>
 	)
 }

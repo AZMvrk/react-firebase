@@ -27,7 +27,7 @@ function Form({ title }) {
 	}
 
 	return (
-		<>
+		<div className="login-register">
 			<form>
 				<h3>{title} form</h3>
 
@@ -48,7 +48,7 @@ function Form({ title }) {
 				:
 					<button onClick={() => navigate('/login')}>go to login</button>
 			}
-		</>
+		</div>
 	)
 }
 

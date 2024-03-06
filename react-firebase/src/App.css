@@ -1,73 +1,197 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+html { 
+  background-color: rgb(0, 0, 0);
+  background: url("../public/background.jpg") no-repeat center center fixed; 
+  opacity: 0.8;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body {
-	padding: 20px;
+  margin: 0;
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 90vh;
+  margin-bottom: 10vh;
+
   
 }
 
 #root {
+  margin-top: 5vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+  justify-content: center;
+  
 
 	gap: 40px;
 }
 
 form{
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  gap: 20px; 
-}
-
-form > button{
-  width: 10vw;
-}
-#root > button{
-  width: 10vw;
+  gap: 10px; 
 }
 
 input {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 20px;
-  padding: 10px;
-  width: 20vw;
+  border: 0.5px solid black;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 80%;
+  box-shadow: 0px 10px 0px rgb(0, 0, 0, 0.1);
 }
 
 button {
+  margin-bottom: 5px;
   border-radius: 20px;
+  border: 0;
+  color: rgb(0, 0, 0, 1);
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 26px;
+  min-width: fit-content;
   padding: 10px;
-  background-color: rgba(0, 122, 204, 0.40);
+  background-color: rgba(200, 200, 200, 0.1);
+  background-image: url("../public/medium_button_texture.png");
+  opacity: 0.9;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  box-shadow: 0px 10px 5px rgb(0, 0, 0, 0.2);
+  letter-spacing: 0.1em;
+}
+.todos-reload{
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.reload-button {
+  max-width: 10vw;
+  background-image: url("../public/medium_button_texture.png");
 }
 
 input:hover{
   cursor: pointer;
-  background-color: rgba(0, 122, 204, 0.20);
+  background-color: rgba(200, 200, 200, 0.20);
+  box-shadow: 0px 10px 5px rgb(0, 0, 0, 0.3);
   
 }
 button:hover{
   cursor: pointer;
-  background-color: rgba(0, 122, 204, 0.20);
+  background-color: rgba(200, 200, 200, 0.80);
+  box-shadow: 0px 10px 5px rgb(0, 0, 0, 0.5);
 }
 
 .home{
+  
+  width: 60vw;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem; 
+  background-image: url("../public/paper_texture.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 2px;
+  box-shadow: 0px 15px 10px rgb(0, 0, 0, 0.8);
+  
+}
+.login-register{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../public/paper_texture.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  border-radius: 2px;
+  gap: 20px;
+  box-shadow: 0px 15px 10px rgb(0, 0, 0, 0.8);
+}
+.login-register > form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+.login-register > form > input{
+  width: 320px;
+}
+
+
+
+.pencil-h2{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.pencil{
+  width: 150px;
+  height: 150px;
+  background-image: url("../public/green_pencil_5b.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .new-todo{
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
-.new-todo > button {
-  background-image: url("/react-firebase/public/medium_button_texture.png");
+.add-button{
   width: 10vw;
 }
 
-#root > div > div.todos{
+.todos{
+  width: 90%;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+ 
+  gap: 20px;
 }
+
 #root > div > div.todos > p{
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 10px 0px rgb(0, 0, 0, 0.1);
+  padding: 10px;
+  padding-left: 15px;
+  border: 0;
+  border-radius: 10px;
   justify-content: right;
   font-size: large;
   display: flex;
@@ -76,24 +200,51 @@ button:hover{
 }
 
 #root > div > div.todos > p > button:hover{
-  background-color: rgba(255, 0, 0, 0.50);
-  color: rgb(0, 0, 0);
+  color: rgb(255, 0, 0, 1);
   border-radius: 10px;
-  border: 1px solid white;
+  border: 0;
+  box-shadow: 0 !important;
 }
 
 #root > div > div.todos > p > button{
-  color: rgba(255, 0, 0, 0.50);
-  border: 1px solid rgba(255, 0, 0, 0.60);
-  background-color: white;
+  color: rgb(0, 0, 0);
+  border: 0;
+  background-color: rgba(200, 200, 200, 0.3);
+  background-image: url("../public/medium_button_texture_red.png");
   border-radius: 10px;
 }
-#root > div > button{
+.logout-button{
+  margin-top: 20px;
   width: 10vw;
+  background-image: url("../public/medium_button_texture_red.png");
 }
+
+
 
 h2{
  text-align: center;
 }
-/* @media only screen and (max-width: 450px) {
-} */
+@media only screen and (max-width: 940px) {
+
+  .home{
+    width: 70vw;
+  }
+  .pencil-h2{
+    display: flex;
+    flex-direction: column;
+    min-height: fit-content;
+  }
+  button{
+    font-size: 20px;
+  }
+} 
+@media only screen and (max-width: 400px) {
+
+  .home{
+    width: 80vw;
+  }
+  .pencil{
+    height: 100px;
+    width: 100px;
+  }
+} 

@@ -45,8 +45,10 @@ function Home() {
 
 	return (
 		<div className="home">
+			<div className="pencil-h2">
 			<h2>Your To Do List</h2>
-
+			<div className="pencil"></div>
+			</div>
 			{user &&
 				<>
 					<NewTodo setRun={setRun} user={user} />
@@ -54,7 +56,7 @@ function Home() {
 				</>
 			}
 
-			<button onClick={handleLogout}>logout</button>
+			<button className="logout-button" onClick={handleLogout}>logout</button>
 		</div>
 	)
 }

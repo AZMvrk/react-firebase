@@ -41,6 +41,7 @@ function Todos({ run, setRun, user }) {
 	}
 
 	return (
+		<>
 		<div className="todos">
 			{todos
 				?
@@ -53,8 +54,11 @@ function Todos({ run, setRun, user }) {
 				:
 				"loading..."
 			}
-			<button onClick={() => setRun(currentState => !currentState)}>Reload</button>
 		</div>
+		<div className="todos-reload">
+			<button className="reload-button" onClick={() => setRun(currentState => !currentState)}>Reload</button>
+		</div>
+		</>
 	)
 }
 
