@@ -7,6 +7,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
+      <div className="footer"></div>
     </BrowserRouter>
   </React.StrictMode>,
 )

@@ -17,12 +17,22 @@ function Form({ title }) {
 					sessionStorage.setItem('token', res._tokenResponse.refreshToken)
 					navigate('/')
 				})
+				.catch(error => {
+					// Handle login error
+					console.error("Login failed:", error.message);
+					alert("The email or the password is incorrect or not exist. Please try again or do the registration.")
+			});
 		} else if (title === "register") {
 			createUserWithEmailAndPassword(auth, email, password)
 				.then(res => {
 					sessionStorage.setItem('token', res._tokenResponse.refreshToken)
 					navigate('/')
 				})
+				.catch(error => {
+					// Handle registration error
+					console.error("Registration failed:", error.message);
+					alert("Something went wrong with the registration...")
+			});
 		}
 	}
 
