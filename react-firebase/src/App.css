@@ -8,7 +8,7 @@
 html { 
   background-color: rgb(0, 0, 0);
   background: url("../public/background.jpg") no-repeat center center fixed; 
-  opacity: 0.8;
+  opacity: 1;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -36,6 +36,7 @@ body {
 	align-items: center;
   justify-content: center;
   opacity: 1 !important;
+  
   
 
 	gap: 40px;
@@ -109,7 +110,7 @@ button:hover{
 }
 
 .home{
-  
+  min-width: 200px;
   width: 60vw;
   display: flex;
   flex-direction: column;
@@ -228,7 +229,7 @@ button:hover{
 h2{
  text-align: center;
 }
-@media only screen and (max-width: 940px) {
+@media only screen and (max-width: 840px) {
 
   .home{
     width: 70vw;
