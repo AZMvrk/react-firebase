@@ -58,6 +58,7 @@ button:hover{
 }
 
 .new-todo > button {
+  background-image: url("/react-firebase/public/medium_button_texture.png");
   width: 10vw;
 }
 

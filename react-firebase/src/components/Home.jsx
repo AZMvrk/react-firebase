@@ -45,7 +45,7 @@ function Home() {
 
 	return (
 		<div className="home">
-			<h2>home page</h2>
+			<h2>Your To Do List</h2>
 
 			{user &&
 				<>

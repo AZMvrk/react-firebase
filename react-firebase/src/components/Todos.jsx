@@ -53,7 +53,7 @@ function Todos({ run, setRun, user }) {
 				:
 				"loading..."
 			}
-			<button onClick={() => setRun(currentState => !currentState)}>fetch todos</button>
+			<button onClick={() => setRun(currentState => !currentState)}>Reload</button>
 		</div>
 	)
 }
